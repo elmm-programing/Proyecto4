@@ -1,0 +1,236 @@
+<!-- navbar -->
+<nav class="container relative py-6 mx-auto">
+  <!-- flex container-->
+  <div class="flex items-center justify-between">
+    <div class="pt-2">
+      <h1>TrabajOff</h1>
+    </div>
+    <div class="hidden md:flex md:space-x-6">
+      <a href="#" class="hover:text-new">Acerca de</a>
+      <a href="#">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Login section -->
+<section id="Registrar" class="mx-auto">
+  <div class="mt-5 w-9/12 mx-auto md:mt-0 md:col-span-2">
+    <form
+      [formGroup]="myRegistrarEmpleadosForm"
+      (ngSubmit)="CreateEmploy(myRegistrarEmpleadosForm)"
+    >
+      <div class="shadow overflow-hidden sm:rounded-md">
+        <div class="px-4 py-5 bg-white sm:p-6">
+          <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-3">
+              <label
+                for="first-name"
+                class="block text-sm font-medium text-gray-700"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                name="Nombre"
+                required
+                id="Nombre"
+                formControlName="Nombre"
+                autocomplete="given-name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+              <label
+                for="last-name"
+                class="block text-sm font-medium text-gray-700"
+                >Apellido</label
+              >
+              <input
+                type="text"
+                name="Apellido"
+                id="Apellido"
+                required
+                formControlName="Apellido"
+                autocomplete="family-name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+            <div class="col-span-6 sm:col-span-3">
+              <label
+                for="first-name"
+                class="block text-sm font-medium text-gray-700"
+                >Cedula</label
+              >
+              <input
+                type="text"
+                name="Cedula"
+                required
+                formControlName="Cedula"
+                id="Cedula"
+                autocomplete="given-name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
+              <label
+                for="Direccion"
+                class="block text-sm font-medium text-gray-700"
+                >Direccion</label
+              >
+              <input
+                type="text"
+                name="Direccion"
+                id="Direccion"
+                required
+                formControlName="Direccion"
+                autocomplete="family-name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+              <label
+                for="Nacionalidad"
+                class="block text-sm font-medium text-gray-700"
+                >Nacionalidad</label
+              >
+              <input
+                type="text"
+                name="Nacionalidad"
+                required
+                id="Nacionalidad"
+                formControlName="Nacionalidad"
+                autocomplete="address-level2"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+              <label
+                for="EstadoCivil"
+                class="block text-sm font-medium text-gray-700"
+                >EstadoCivil</label
+              >
+              <input
+                type="text"
+                name="EstadoCivil"
+                required
+                formControlName="EstadoCivil"
+                id="EstadoCivil"
+                autocomplete="address-level1"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+              <label for="Sexo" class="block text-sm font-medium text-gray-700"
+                >Sexo</label
+              >
+              <select
+                id="country"
+                name="country"
+                required
+                formControlName="Sexo"
+                autocomplete="country-name"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              >
+                <option>Masculino</option>
+                <option>Femenino</option>
+              </select>
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+              <label
+                for="Telefono"
+                class="block text-sm font-medium text-gray-700"
+                >Telefono</label
+              >
+              <input
+                type="number"
+                name="Telefono"
+                id="Telefono"
+                required
+                formControlName="Telefono"
+                autocomplete="number"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+              <label
+                for="FechaNacimiento"
+                class="block text-sm font-medium text-gray-700"
+                >Fecha de nacimiento</label
+              >
+              <input
+                type="date"
+                name="FechaNacimiento"
+                required
+                formControlName="FechaNacimiento"
+                id="FechaNacimiento"
+                autocomplete="address-level2"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+              <label
+                for="Salario"
+                class="block text-sm font-medium text-gray-700"
+                >Salario</label
+              >
+              <input
+                type="number"
+                name="Salario"
+                id="Salario"
+                required
+                formControlName="Salario"
+                autocomplete="address-level2"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+              <label
+                for="HorasSalario"
+                class="block text-sm font-medium text-gray-700"
+                >Horas x Salario</label
+              >
+              <input
+                type="number"
+                name="HorasSalario"
+                id="HorasSalario"
+                required
+                formControlName="HorasSalario"
+                autocomplete="address-level1"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+              <label
+                for="ImagenUrl"
+                class="block text-sm font-medium text-gray-700"
+                >Imagen</label
+              >
+              <input
+                type="text"
+                name="ImagenUrl"
+                id="ImagenUrl"
+                required
+                autocomplete="address-level1"
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full h-7 shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
+            </div>
+
+            <!--before here-->
+          </div>
+        </div>
+        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <button
+            type="submit"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
