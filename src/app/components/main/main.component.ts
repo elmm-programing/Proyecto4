@@ -32,44 +32,41 @@ export class MainComponent implements OnInit {
 
   CreateEmploy(form: FormGroup) {
     if (form.valid) {
-      console.log(form.value.Nombre);
-      console.log(form.value.Apellido);
-      console.log(form.value.Cedula);
-      console.log(form.value.Direccion);
-      console.log(form.value.Nacionalidad);
-      console.log(form.value.Telefono);
-      console.log(form.value.EstadoCivil);
-      console.log(form.value.Sexo);
-      console.log(form.value.FechaNacimiento);
-      console.log(form.value.Salario);
-      console.log(form.value.HorasSalario);
-
       let employ: Empleado = {
-        Nombre: form.value.Nombre,
-        Apellido: form.value.Apellido,
-        Cedula: form.value.Cedula,
-        Direccion: form.value.Direccion,
-        Nacionalidad: form.value.Nacionalidad,
-        Telefono: form.value.Telefono,
-        EstadoCivil: form.value.EstadoCivil,
-        Sexo: form.value.Sexo,
-        FechaNacimiento: form.value.FechaNacimiento,
-        Salario: form.value.Salario,
-        HorasSalario: form.value.HorasSalario,
+        nombre: form.value.Nombre,
+        apellido: form.value.Apellido,
+        cedula: form.value.Cedula,
+        direccion: form.value.Direccion,
+        nacionalidad: form.value.Nacionalidad,
+        telefono: form.value.Telefono,
+        estadoCivil: form.value.EstadoCivil,
+        sexo: form.value.Sexo,
+        fechaNacimiento: form.value.FechaNacimiento,
+        idTipoEmpleado: 1,
+        salario: form.value.Salario,
+        horasSalario: Number(form.value.HorasSalario),
+        imagenUrl: 'string',
+        idDepartamento: 1,
+        idRoll: 1,
+        idHorario: 1,
       };
-      this.service.createEmployee(employ);
-    } else {
-      console.log(form.value.Nombre);
-      console.log(form.value.Apellido);
-      console.log(form.value.Cedula);
-      console.log(form.value.Direccion);
-      console.log(form.value.Nacionalidad);
-      console.log(form.value.Telefono);
-      console.log(form.value.EstadoCivil);
-      console.log(form.value.Sexo);
-      console.log(form.value.FechaNacimiento);
       console.log(form.value.Salario);
       console.log(form.value.HorasSalario);
+      this.service.createEmployee(employ).forEach((val) => {
+        console.log(val);
+      });
+    } else {
+      // console.log(form.value.Nombre);
+      // console.log(form.value.Apellido);
+      // console.log(form.value.Cedula);
+      // console.log(form.value.Direccion);
+      // console.log(form.value.Nacionalidad);
+      // console.log(form.value.Telefono);
+      // console.log(form.value.EstadoCivil);
+      // console.log(form.value.Sexo);
+      // console.log(form.value.FechaNacimiento);
+      // console.log(form.value.Salario);
+      // console.log(form.value.HorasSalario);
       alert('Complete all information');
     }
   }

@@ -16,7 +16,18 @@ export class LoginComponent implements OnInit {
 
   LoginEmploy(form: FormGroup) {
     if (form.valid) {
-      this.service.getEmployees();
+      this.service.getEmployees().forEach((val) => {
+        val.forEach((value) => {
+          if (
+            value.email == form.value.email &&
+            value.contraseña == form.value.password
+          ) {
+            console.log('Es igual');
+          } else {
+            console.log('Es diferente');
+          }
+        });
+      });
     } else {
       alert('Complete all information');
     }

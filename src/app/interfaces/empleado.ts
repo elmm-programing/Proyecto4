@@ -1,19 +1,18 @@
 export interface Empleado {
-  idEmpleado?: string;
-  Nombre: string;
-  Apellido: string;
-  Cedula: string;
-  Direccion: string;
-  Nacionalidad: string;
-  Telefono: number;
-  EstadoCivil: string;
-  Sexo: string;
-  FechaNacimiento: string;
-  idTipoEmpleado?: number;
-  Salario: number;
-  HorasSalario: number;
-  ImagenUrl?: any;
-  idDepartamento?: number;
-  idRoll?: number;
-  idHorario?: number;
+  nombre: string;
+  apellido: string;
+  cedula: string;
+  direccion: string;
+  nacionalidad: string;
+  telefono: string;
+  estadoCivil: string;
+  sexo: string;
+  fechaNacimiento: string;
+  idTipoEmpleado: number;
+  salario: number;
+  horasSalario: number;
+  imagenUrl: string;
+  idDepartamento: number;
+  idRoll: number;
+  idHorario: number;
 }
