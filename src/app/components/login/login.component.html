@@ -1,26 +1,14 @@
-<!-- navbar -->
-<nav class="container relative py-6 mx-auto">
-  <!-- flex container-->
-  <div class="flex items-center justify-between">
-    <div class="pt-2">
-      <h1>TrabajOff</h1>
-    </div>
-    <div class="hidden md:flex md:space-x-6">
-      <a href="#" class="hover:text-new">Acerca de</a>
-      <a href="#">Contacto</a>
-    </div>
-  </div>
-</nav>
-
+<app-nav-start></app-nav-start>
 <!-- Login section -->
-<section id="Login">
+<section id="Login" >
+  
   <div
-    class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+    class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 z-40"
   >
-    <div class="max-w-md w-full space-y-8">
+    <div class="w-1/3 items-center justify-center rounded-md space-y-8 bg-royal  h-140">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
+        <h2 class="mt-6 text-center text-3xl text-white">
+        Bienvenido 
         </h2>
       </div>
       <form
@@ -28,9 +16,9 @@
         [formGroup]="myLoginForm"
         (ngSubmit)="LoginEmploy(myLoginForm)"
       >
-        <div class="rounded-md shadow-sm -space-y-px">
+        <div class="rounded-[12px] block shadow-sm -space-y-px items-center ">
           <div>
-            <label for="email-address" class="sr-only">Email address</label>
+            <label for="email-address" class="sr-only">Usuario</label>
             <input
               id="email-address"
               name="email"
@@ -38,12 +26,13 @@
               formControlName="email"
               autocomplete="email"
               required
-              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Email address"
+              class="justify-center  rounded-full ml-14 w-3/4 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Usuario"
             />
           </div>
+          <br>
           <div>
-            <label for="password" class="sr-only">Password</label>
+            <label for="password" class="sr-only">Contraseña</label>
             <input
               id="password"
               name="password"
@@ -51,8 +40,8 @@
               formControlName="password"
               autocomplete="current-password"
               required
-              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-              placeholder="Password"
+              class="appearance-none rounded-full ml-14  w-3/4 items-center px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+              placeholder="Contraseña"
             />
           </div>
         </div>
@@ -60,12 +49,36 @@
         <div>
           <button
             type="submit"
-            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            class=" ml-20 w-3/5 place-self-center mb-5 self-center justify-center text-center py-2 px-4 border border-transparent  rounded-full text-white bg-blue-400 hover:bg-blue focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
-            Sign in
+          Log in
           </button>
+          
         </div>
+        <a href="" class="text-center ml-28 text-blue-300">¿Olvidaste tu contraseña?</a>
+
       </form>
     </div>
   </div>
 </section>
+
+<div class="custom-shape-divider-top-1659918374">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+      class="shape-fill"
+    ></path>
+  </svg>
+</div>
+
+
+
+<footer class="bg-black text-white text-center h-5 w-full absolute bottom-0">
+2022 Todos los derechos reservados.
+
+</footer>
