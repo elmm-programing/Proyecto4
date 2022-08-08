@@ -10,7 +10,8 @@ module.exports = {
         dark_green: "#15677d",
         light_blue: "#0fb4ec",
         dark_gray: "#696969",
-        blue_form: "#3f37c9"
+        blue_form: "#3f37c9",
+        royal: "#03045E"
       },
     },
   },
