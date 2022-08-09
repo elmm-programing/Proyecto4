@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { Departamentos } from 'src/app/interfaces/departamentos';
 import { Empleado } from 'src/app/interfaces/empleado';
+import { Horarios } from 'src/app/interfaces/horarios';
+import { Rolles } from 'src/app/interfaces/rolles';
+import { TiposEmpleados } from 'src/app/interfaces/tiposEmpleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
 
 @Component({
@@ -27,8 +32,17 @@ export class MainComponent implements OnInit {
     idRoll: new FormControl(),
     idHorario: new FormControl(),
   });
+  TiposDeEmpleados: Observable<TiposEmpleados[]>;
+  TiposDeDepartamentos: Observable<Departamentos[]>;
+  Horarios: Observable<Horarios[]>;
+  Rolles: Observable<Rolles[]>;
 
-  constructor(private service: EmpleadosService) {}
+  constructor(private service: EmpleadosService) {
+    this.TiposDeEmpleados = service.getTipoEmpleados();
+    this.TiposDeDepartamentos = service.getTipoDepartamentos();
+    this.Horarios = service.getHorarios();
+    this.Rolles = service.getRoles();
+  }
 
   CreateEmploy(form: FormGroup) {
     if (form.valid) {
@@ -38,23 +52,22 @@ export class MainComponent implements OnInit {
         cedula: form.value.Cedula,
         direccion: form.value.Direccion,
         nacionalidad: form.value.Nacionalidad,
-        telefono: form.value.Telefono,
+        telefono: form.value.Telefono.toString(),
         estadoCivil: form.value.EstadoCivil,
         sexo: form.value.Sexo,
         fechaNacimiento: form.value.FechaNacimiento,
-        idTipoEmpleado: 1,
+        idTipoEmpleado: Number(form.value.idTipoEmpleado),
         salario: form.value.Salario,
         horasSalario: Number(form.value.HorasSalario),
         imagenUrl: 'string',
-        idDepartamento: 1,
+        idDepartamento: Number(form.value.idDepartamento),
         idRoll: 1,
         idHorario: 1,
       };
-      console.log(form.value.Salario);
-      console.log(form.value.HorasSalario);
       this.service.createEmployee(employ).forEach((val) => {
         console.log(val);
       });
+      console.log(String(form.value.Telefono));
     } else {
       // console.log(form.value.Nombre);
       // console.log(form.value.Apellido);
