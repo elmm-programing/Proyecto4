@@ -1,4 +1,5 @@
 export interface Empleado {
+  idEmpleado?: string;
   nombre: string;
   apellido: string;
   cedula: string;

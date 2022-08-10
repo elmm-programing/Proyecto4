@@ -19,6 +19,9 @@ export class EmpleadosService {
   public createEmployee(emp: Empleado) {
     return this.http.post('http://45.35.64.173:9095/api/Empleados', emp);
   }
+  public updateEmployee(id: string, emp: Empleado) {
+    return this.http.put(`http://45.35.64.173:9095/api/Empleados/${id}`, emp);
+  }
   /**
    * getTipoEmpleados
    */
@@ -48,9 +51,21 @@ export class EmpleadosService {
     return this.http.get<Rolles[]>('http://45.35.64.173:9095/api/Rolles');
   }
   /**
+   * deleteEmploy
+   */
+  public deleteEmploy(id: string) {
+    return this.http.delete(`http://45.35.64.173:9095/api/Empleados/${id}`);
+  }
+  /**
    * getEmployees
    */
-  public getEmployees(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>('http://45.35.64.173:9095/api/Usuarios');
+  public getEmployees(): Observable<Empleado[]> {
+    return this.http.get<Empleado[]>('http://45.35.64.173:9095/api/Empleados');
+  }
+
+  public getUsers(user: string, password: string): Observable<Usuario> {
+    return this.http.get<Usuario>(
+      `http://45.35.64.173:9095/api/Usuarios/${user},${password}`
+    );
   }
 }

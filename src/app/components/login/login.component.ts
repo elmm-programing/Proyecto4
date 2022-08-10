@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmpleadosService } from 'src/app/services/empleados.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,22 +13,16 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private service: EmpleadosService, private route:Router) {}
+  constructor(private service: EmpleadosService, private route: Router) {}
 
   LoginEmploy(form: FormGroup) {
     if (form.valid) {
-      this.service.getEmployees().forEach((val) => {
-        val.forEach((value) => {
-          if (
-            value.email == form.value.email &&
-            value.contraseña == form.value.password
-          ) {
-            this.route.navigate(['/main']);
-          } else {
-            console.log('Es diferente');
-          }
-        });
-      });
+      this.service.getUsers(form.value.email, form.value.password).subscribe(
+        (res) => {
+          this.route.navigate(['/main']);
+        },
+        (err) => alert('El usuario o la contraseña estan mal')
+      );
     } else {
       alert('Complete all information');
     }
