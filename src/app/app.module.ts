@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavStartComponent } from './components/nav-start/nav-start.component';
@@ -15,7 +14,6 @@ import { NavStartComponent } from './components/nav-start/nav-start.component';
     AppComponent,
     LoginComponent,
     MainComponent,
-    LandingPageComponent,
     NavStartComponent,
   ],
   imports: [
