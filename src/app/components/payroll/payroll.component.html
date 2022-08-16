@@ -1,0 +1,120 @@
+<app-nav-start></app-nav-start>
+
+<div>
+
+  <mat-card class="Container">
+    <mat-card-title>
+      <table class="table">
+        <tr>
+          <th  >
+            <div class="alignstart">
+              Registro de nomina
+            </div>            
+          </th>
+          <th >
+            <div class="alignend">
+              <mat-card-actions>
+                <button mat-raised-button color="primary" type="button">Procesar</button>
+                <button mat-raised-button color="primary" type="button">Ver Detalle</button>
+              </mat-card-actions>
+            </div>
+            
+          </th>
+        </tr>
+      </table>
+
+      
+    </mat-card-title>
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="Espacio">
+
+      <form [formGroup]="NominaFormGroup"
+          (ngSubmit)="CreatePayRoll(NominaFormGroup)">
+
+        <mat-form-field appearance="fill" class="example-form-field1">
+          <mat-label>Tipo Empleado</mat-label>
+          <mat-select formControlName="TipoEmpleadoControl">
+            <mat-option *ngFor="let tipoEmpleado of TiposDeEmpleados | async " [value]="tipoEmpleado.idTipoEmpleado">{{tipoEmpleado.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="TipoEmpleadoControl.hasError('required')">Please choose TipoEmpleado</mat-error>
+          <mat-hint>{{TipoEmpleadoControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-form-field1">
+          <mat-label>Tipo Nomina</mat-label>
+          <mat-select formControlName="TipoNominaControl">
+            <mat-option *ngFor="let tipoNomina of TipoNomina | async " [value]="tipoNomina.idTipoNomina">{{tipoNomina.descripcion}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="TipoNominaControl.hasError('required')">Please choose TipoNomina</mat-error>
+          <mat-hint>{{TipoNominaControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Desde</mat-label>
+          <input matInput [matDatepicker]="desde" formControlName="desdeControl">
+          <mat-datepicker-toggle matSuffix [for]="desde"></mat-datepicker-toggle>
+          <mat-datepicker #desde>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+          <mat-error *ngIf="TipoNominaControl.hasError('required')">Please choose Desde</mat-error>
+          <mat-hint>{{TipoNominaControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Hasta</mat-label>
+          <input matInput [matDatepicker]="hasta" formControlName="hastaControl">
+          <mat-datepicker-toggle matSuffix [for]="hasta"></mat-datepicker-toggle>
+          <mat-datepicker #hasta>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+          <mat-error *ngIf="TipoNominaControl.hasError('required')">Please choose Hasta</mat-error>
+          <mat-hint>{{TipoNominaControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-form-field">
+          <mat-label>Fecha Pago</mat-label>
+          <input matInput [matDatepicker]="pago" formControlName="pagoControl">
+          <mat-datepicker-toggle matSuffix [for]="pago"></mat-datepicker-toggle>
+          <mat-datepicker #pago>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+          <mat-error *ngIf="TipoNominaControl.hasError('required')">Please choose FechaPago</mat-error>
+          <mat-hint>{{TipoNominaControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+      
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Descripcion</mat-label>
+          <textarea matInput placeholder="" formControlName="descripcionControl"></textarea>
+          <mat-error *ngIf="TipoNominaControl.hasError('required')">Please choose Descripcion</mat-error>
+          <mat-hint>{{TipoNominaControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+        <mat-card-actions align="end">
+          <button  mat-raised-button color="warn" type="button" (click)="openDialog()">
+            Ver Registros
+          </button>
+          <button mat-raised-button color="primary" type="submit">Guardar</button>
+
+        </mat-card-actions>
+  
+      </form>
+    </mat-card-content>
+
+    
+
+
+  </mat-card>
+
+
+</div>
