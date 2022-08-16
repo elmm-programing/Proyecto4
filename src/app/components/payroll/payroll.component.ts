@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table';
 import { Observable } from 'rxjs';
 import { nomina } from 'src/app/interfaces/nomina';
 import { tipoNomina } from 'src/app/interfaces/tipoNomina';
 import { TiposEmpleados } from 'src/app/interfaces/tiposEmpleados';
 import { EmpleadosService } from 'src/app/services/empleados.service';
-import { MessageDialogComponent } from './Modal/message-dialog/message-dialog.component';
-
+import { DataSource } from '@angular/cdk/table';
+import { Router } from '@angular/router';
 
 
 
@@ -43,8 +44,10 @@ export class PayrollComponent implements OnInit {
   TiposDeEmpleados: Observable<TiposEmpleados[]>;
   TipoNomina: Observable<tipoNomina[]>;
   
-  constructor( private service: EmpleadosService
-    ,public dialog: MatDialog
+  constructor( private service: EmpleadosService,
+    public dialog: MatDialog,
+    private route: Router
+
     ) { 
 
     this.TiposDeEmpleados = service.getTipoEmpleados();
@@ -82,6 +85,10 @@ export class PayrollComponent implements OnInit {
      
   }
 
+  payrollListNav(){
+    this.route.navigate(['/payrollList']);
+  }
+
   openDialog() {
     this.dialog.open(DialogElementsExampleDialog);
     
@@ -91,39 +98,14 @@ export class PayrollComponent implements OnInit {
 
 @Component({
   selector: 'dialog-elements-example-dialog',
-  templateUrl: 'dialog-elements-example-dialog.html',
+  templateUrl: './dialog-elements-example-dialog.html',
   styleUrls: ['./payroll.component.css']
 })
+
 export class DialogElementsExampleDialog {
 
 
 }
 
-
-@Component({
-  selector: 'nomdialog',
-  templateUrl: 'nomdialog.html',
-  styleUrls: ['./payroll.component.css']
-})
-export class NomDialog {
-  Nominas: Observable<nomina[]>;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource: any
-
-  
-
-  constructor(private service: EmpleadosService){
-    this.Nominas = service.getPayroll();
-  }
-
-  getNom(){
-
-    this.dataSource = this.Nominas
-    
-  }
-
-  
-
-}
 
 
