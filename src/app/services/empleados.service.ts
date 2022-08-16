@@ -7,6 +7,9 @@ import { Horarios } from '../interfaces/horarios';
 import { Rolles } from '../interfaces/rolles';
 import { TiposEmpleados } from '../interfaces/tiposEmpleados';
 import { Usuario } from '../interfaces/usuario';
+import {tipoNomina} from'../interfaces/tipoNomina';
+import { nomina } from '../interfaces/nomina';
+
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +22,15 @@ export class EmpleadosService {
   public createEmployee(emp: Empleado) {
     return this.http.post('http://45.35.64.173:9095/api/Empleados', emp);
   }
+  
+  /**
+   * createPayroll
+   */
+  public createPayroll(nom: nomina) {
+    return this.http.post('http://45.35.64.173:9095/api/Nominas', nom);
+  }
+  
+
   public updateEmployee(id: string, emp: Empleado) {
     return this.http.put(`http://45.35.64.173:9095/api/Empleados/${id}`, emp);
   }
@@ -28,6 +40,14 @@ export class EmpleadosService {
   public getTipoEmpleados(): Observable<TiposEmpleados[]> {
     return this.http.get<TiposEmpleados[]>(
       'http://45.35.64.173:9095/api/TipoEmpleados'
+    );
+  }
+  /**
+   * getTipoNomina
+   */
+  public getTipoNomina(): Observable<tipoNomina[]> {
+    return this.http.get<tipoNomina[]>(
+      'http://45.35.64.173:9095/api/TiposNominas'
     );
   }
   /**
@@ -59,9 +79,16 @@ export class EmpleadosService {
   /**
    * getEmployees
    */
-  public getEmployees(): Observable<Empleado[]> {
-    return this.http.get<Empleado[]>('http://45.35.64.173:9095/api/Empleados');
+  public getPayroll(): Observable<nomina[]> {
+    return this.http.get<nomina[]>('http://45.35.64.173:9095/api/Nominas');
   }
+
+   /**
+   * getEmployees
+   */
+    public getEmployees(): Observable<Empleado[]> {
+      return this.http.get<Empleado[]>('http://45.35.64.173:9095/api/Empleados');
+    }
 
   public getUsers(user: string, password: string): Observable<Usuario> {
     return this.http.get<Usuario>(

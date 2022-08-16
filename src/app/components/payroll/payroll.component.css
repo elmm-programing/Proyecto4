@@ -1,0 +1,58 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.Container {
+    margin: auto;
+    margin-top: 30px;
+    width: 70%;
+    padding: 20px;
+
+}
+
+.Espacio{
+    margin: auto;
+    margin-top: 30px;
+}
+
+.example-form-field {
+    margin-right: 10px;
+    min-width: 150px;
+    max-width: 330px;
+    width: 70%;
+  }
+
+  .example-form-field1 {
+    margin-right: 10px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 70%;
+  }
+
+  
+  .example-full-width {
+    width: 98%;
+  }
+
+  img{
+    display:block;
+    margin:auto;
+    text-align: center
+    }
+
+  .alignend{
+    text-align: end;
+    
+  }
+
+  .alignstart{
+    text-align: start;
+    
+  }
+
+  .table{
+    margin: auto;
+    width: 100%;
+    padding: 20px;
+    
+  }
+
