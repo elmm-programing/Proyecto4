@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     if (form.valid) {
       this.service.getUsers(form.value.email, form.value.password).subscribe(
         (res) => {
-          this.route.navigate(['/main']);
+          this.route.navigate(['/empleados']);
         },
         (err) => alert('El usuario o la contraseña estan mal')
       );
