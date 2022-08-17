@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
+import { PayrollListComponent } from './components/payroll-list/payroll-list.component';
 import { PayrollComponent } from './components/payroll/payroll.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'empleados', component: EmpleadosComponent },
   { path: 'payroll', component: PayrollComponent },
+  { path: 'payrollList', component: PayrollListComponent },
 ];
 
 @NgModule({

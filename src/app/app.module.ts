@@ -18,8 +18,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MessageDialogComponent } from './components/payroll/Modal/message-dialog/message-dialog.component';
+
+import {MatTableModule} from '@angular/material/table';
+import { PayrollListComponent } from './components/payroll-list/payroll-list.component';
 import { EmpleadosComponent } from './components/empleados/empleados.component';
+
 
 //import { MatFormFieldModule } from "@angular/material/form-field";
 
@@ -31,7 +34,8 @@ import { EmpleadosComponent } from './components/empleados/empleados.component';
     MainComponent,
     NavStartComponent,
     PayrollComponent,
-    MessageDialogComponent,
+    PayrollListComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { EmpleadosComponent } from './components/empleados/empleados.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
