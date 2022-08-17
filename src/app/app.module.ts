@@ -11,14 +11,15 @@ import { NavStartComponent } from './components/nav-start/nav-start.component';
 import { PayrollComponent } from './components/payroll/payroll.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MessageDialogComponent } from './components/payroll/Modal/message-dialog/message-dialog.component';
+import { EmpleadosComponent } from './components/empleados/empleados.component';
 
 //import { MatFormFieldModule } from "@angular/material/form-field";
 
@@ -26,13 +27,11 @@ import { MessageDialogComponent } from './components/payroll/Modal/message-dialo
   declarations: [
     AppComponent,
     LoginComponent,
+    EmpleadosComponent,
     MainComponent,
     NavStartComponent,
     PayrollComponent,
     MessageDialogComponent,
-   
-    
-
   ],
   imports: [
     BrowserModule,
@@ -48,8 +47,7 @@ import { MessageDialogComponent } from './components/payroll/Modal/message-dialo
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
-    
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
